@@ -1,0 +1,13 @@
+[Unit]
+Description=lance phototobooth automatiquement au démarrage
+After=network-online.target
+
+[Service]
+User=root
+Type=forking
+ExecStart=startx /home/pi/Photobooth/main.py
+StandardOutput=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
